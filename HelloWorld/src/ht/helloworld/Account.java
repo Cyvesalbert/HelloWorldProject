@@ -1,6 +1,6 @@
 package ht.helloworld;
 
-public class Account {
+public class Account {//
 	
 	private double balance;
 	
