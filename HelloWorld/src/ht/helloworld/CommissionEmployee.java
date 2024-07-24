@@ -2,11 +2,11 @@ package ht.helloworld;
 
 public class CommissionEmployee extends Object {
 
-	private String firstName;
-	private String lastName;
-	private String socialSecurityNumber;
-	private double grossSales;
-	private double commissionRate;
+	protected String firstName;
+	protected String lastName;
+	protected String socialSecurityNumber;
+	protected double grossSales;
+	protected double commissionRate;
 	
 	public CommissionEmployee(String first, String last, String ssn, double sales, double rate) {
 		firstName = first;
