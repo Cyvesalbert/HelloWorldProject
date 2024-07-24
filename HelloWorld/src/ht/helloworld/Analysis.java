@@ -2,7 +2,7 @@ package ht.helloworld;
 
 import java.util.Scanner;
 
-public class Analysis {
+public class Analysis {//
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
