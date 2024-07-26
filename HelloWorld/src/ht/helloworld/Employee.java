@@ -1,31 +1,51 @@
 package ht.helloworld;
 
-public class Employee {
+public abstract class Employee {
 
 	
 	private String firstName;
 	private String lastName;
-	private static int count;
+	private String socialSecurityNumber;
 	
-	public Employee(String first, String last) {
+	public Employee(String first, String last, String ssn) {
 		firstName = first;
 		lastName = last;
-		++count;
-		System.out.printf("Employee constructor: %s %s; count = %d\n", firstName, lastName, count);
+		socialSecurityNumber = ssn;
 		
-		
+	}
+	
+	public void setFirstName(String first) {
+		firstName = first;
 	}
 	
 	public String getFirstName() {
 		return firstName;
 	}
 	
+	public void setLastName(String last) {
+		lastName = last;
+	}
+	
 	public String getLastName() {
 		return lastName;
 	}
 	
-	public static int getCount(){
-		return count;
+	public void setSocialSecurityNumber(String ssn){
+		socialSecurityNumber = ssn;
 	}
+	
+	public String getSocialSecurityNumber() {
+		return socialSecurityNumber;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return String.format("%s %s\nsocial security number: %s", getFirstName(), getLastName(), getSocialSecurityNumber());
+	}
+	
+	
+	public abstract double earnings();
+	
 	
 }
