@@ -1,6 +1,6 @@
 package ht.helloworld;
 
-public abstract class Employee {
+public abstract class Employee implements Payable{
 
 	
 	private String firstName;
@@ -43,9 +43,5 @@ public abstract class Employee {
 	public String toString() {
 		return String.format("%s %s\nsocial security number: %s", getFirstName(), getLastName(), getSocialSecurityNumber());
 	}
-	
-	
-	public abstract double earnings();
-	
 	
 }

@@ -20,14 +20,14 @@ public class PayrollSystemTest {
 		System.out.println("Employees processed individually:\n");
 		
 		System.out.printf( "%s\n%s: $%,.2f\n\n",
-				salariedEmployee, "earned", salariedEmployee.earnings() );
+				salariedEmployee, "earned", salariedEmployee.getPaymentAmount() );
 				System.out.printf( "%s\n%s: $%,.2f\n\n",
-				hourlyEmployee, "earned", hourlyEmployee.earnings() );
+				hourlyEmployee, "earned", hourlyEmployee.getPaymentAmount() );
 				System.out.printf( "%s\n%s: $%,.2f\n\n",
-				commissionEmployee, "earned", commissionEmployee.earnings() );
+				commissionEmployee, "earned", commissionEmployee.getPaymentAmount() );
 				System.out.printf( "%s\n%s: $%,.2f\n\n",
 				basePlusCommissionEmployee,
-				"earned", basePlusCommissionEmployee.earnings() );
+				"earned", basePlusCommissionEmployee.getPaymentAmount() );
 		
 		Employee[] employees = new Employee[4];
 		
@@ -50,7 +50,7 @@ public class PayrollSystemTest {
 				System.out.printf("New base salary with 10%% increase is: $%,.2f\n", employee.getBaseSalary());
 			}
 			
-			System.out.printf("earned $%,.2f\n\n", currentEmployee.earnings());
+			System.out.printf("earned $%,.2f\n\n", currentEmployee.getPaymentAmount());
 			
 			
 		}
