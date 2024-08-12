@@ -59,12 +59,12 @@ public class CelciusFarenheitGui extends JFrame{
 			if(celciusTextField.getText().trim().isEmpty() &&  farenheitTextField.getText().trim().isEmpty()) {
 				JOptionPane.showMessageDialog(null, "You must enter a degreee farenheit or celcius");
 			}else if(!celciusTextField.getText().trim().isEmpty() && farenheitTextField.getText().trim().isEmpty()) {
-				float celciusDegree = Integer.parseInt(celciusTextField.getText());
-				double result = (celciusDegree * 1.8) + 32;
+				float celciusDegree = Float.parseFloat(celciusTextField.getText());
+				double result = Math.round((celciusDegree * 1.8) + 32);
 				farenheitTextField.setText(String.valueOf(result));
 			}else if(!farenheitTextField.getText().trim().isEmpty() && celciusTextField.getText().trim().isEmpty()) {
-				float farenheitDegree = Integer.parseInt(farenheitTextField.getText());
-				double result = (farenheitDegree - 32) * 5 / 9;
+				float farenheitDegree = Float.parseFloat(farenheitTextField.getText());
+				double result = Math.round((farenheitDegree - 32) * 5 / 9);
 				celciusTextField.setText(Double.toString(result));
 			}
 		}else {
