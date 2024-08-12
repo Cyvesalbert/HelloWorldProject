@@ -20,7 +20,7 @@ public class CelciusFarenheitGui extends JFrame{
 	private JLabel farenheitLabel;
 	private JLabel celciusLabel;
 	private JButton convertButton;
-
+	private JButton cancelButton;
 	
 	public CelciusFarenheitGui() {
 		super("Celcius to Farenheit");
@@ -41,8 +41,12 @@ public class CelciusFarenheitGui extends JFrame{
 		convertButton = new JButton("Convert");
 		add(convertButton);
 		
+		cancelButton = new JButton("Cancel");
+		add(cancelButton);
+		
 		ConvertButtonHandler handler = new ConvertButtonHandler();
 		convertButton.addActionListener(handler);
+		cancelButton.addActionListener(handler);
 		
 	}
 	
@@ -51,9 +55,23 @@ public class CelciusFarenheitGui extends JFrame{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			if(celciusTextField.getText() == null &&  farenheitTextField.getText() == null ) {
+			if(e.getActionCommand() == "Convert") {
+			if(celciusTextField.getText().trim().isEmpty() &&  farenheitTextField.getText().trim().isEmpty()) {
 				JOptionPane.showMessageDialog(null, "You must enter a degreee farenheit or celcius");
+			}else if(!celciusTextField.getText().trim().isEmpty() && farenheitTextField.getText().trim().isEmpty()) {
+				float celciusDegree = Integer.parseInt(celciusTextField.getText());
+				double result = (celciusDegree * 1.8) + 32;
+				farenheitTextField.setText(String.valueOf(result));
+			}else if(!farenheitTextField.getText().trim().isEmpty() && celciusTextField.getText().trim().isEmpty()) {
+				float farenheitDegree = Integer.parseInt(farenheitTextField.getText());
+				double result = (farenheitDegree - 32) * 5 / 9;
+				celciusTextField.setText(Double.toString(result));
 			}
+		}else {
+			celciusTextField.setText("");
+			farenheitTextField.setText("");
+		}
+			
 		}
 		
 	}
