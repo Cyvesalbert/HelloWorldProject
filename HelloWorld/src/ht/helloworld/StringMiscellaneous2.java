@@ -32,6 +32,7 @@ public class StringMiscellaneous2 {
 			System.out.print( character );
 			
 		System.out.println();
+		
 	}
 
 }
