@@ -12,6 +12,7 @@ public class FileDemonstration {
 		Scanner input = new Scanner(System.in);
 		
 		System.out.print("Enter file or directory name: ");
+		System.out.println(File.separator);
 		analyzePath(input.nextLine());
 		
 	}
