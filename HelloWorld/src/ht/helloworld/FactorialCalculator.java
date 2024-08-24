@@ -1,5 +1,6 @@
 package ht.helloworld;
 
+//Factorial calculations with a recursive method
 import java.math.BigInteger;
 
 //Recursive factorial method.
