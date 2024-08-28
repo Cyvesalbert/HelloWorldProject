@@ -8,12 +8,12 @@ import java.io.ObjectInputStream;
 // and displaying each record.
 public class ReadSequentialFile {
 
-	private ObjectInputStream input;
+	private static ObjectInputStream input;
 	
 	// enable user to select file to open
-	public void openFile() {
+	public static void openFile(String fichier) {
 		try { // open file
-			input = new ObjectInputStream(new FileInputStream("clients.txt"));
+			setInput(new ObjectInputStream(new FileInputStream(fichier)));
 		}catch(IOException ioException) {
 			System.err.println("error opening file");
 		}
@@ -26,7 +26,7 @@ public class ReadSequentialFile {
 		
 		try { // input the values from the file
 			while(true) {
-				record = (AccountRecordSerializable) input.readObject();
+				record = (AccountRecordSerializable) getInput().readObject();
 				
 				// display record contents
 				System.out.printf( "%-10d%-12s%-12s%10.2f\n", record.getAcccount(), record.getFirstName(), record.getLastName(), record.getBalance() );
@@ -45,12 +45,20 @@ public class ReadSequentialFile {
 	// close file and terminate application
 	public void closeFile() {
 		try { // close file and exit
-			if(input != null)
-				input.close();
+			if(getInput() != null)
+				getInput().close();
 		}catch(IOException ioException) {
 			System.err.println("Error closing file");
 			System.exit(1);
 		}
+	}
+
+	public static ObjectInputStream getInput() {
+		return input;
+	}
+
+	public static void setInput(ObjectInputStream input) {
+		ReadSequentialFile.input = input;
 	}
 	
 	

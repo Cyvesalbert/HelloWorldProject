@@ -9,7 +9,7 @@ import java.util.Scanner;
 //Writing objects sequentially to a file with class ObjectOutputStream.
 public class CreateSequentialFile {
 	
-	public static ObjectOutputStream output; // outputs data to file
+	public  static ObjectOutputStream output; // outputs data to file
 	
 	// allow user to specify file name
 	public static void openFile(String fichier) {
@@ -62,7 +62,7 @@ public class CreateSequentialFile {
 	}
 		
 		// close file and terminate application
-		public void closeFile() {
+		public static void closeFile() {
 			try { // close file
 				if(output != null)
 					output.close();

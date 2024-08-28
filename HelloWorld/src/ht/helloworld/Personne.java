@@ -1,6 +1,7 @@
 package ht.helloworld;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class Personne implements Serializable {
 	private String nom;
@@ -92,6 +93,25 @@ public class Personne implements Serializable {
 				" = " + this.pays + " = " + this.telephone + " = " + this.nif ;
 	}
 	
-	
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Personne personne = (Personne) o;
+        return age == personne.age &&
+                Objects.equals(nom, personne.nom) &&
+                Objects.equals(prenom, personne.prenom) &&
+                Objects.equals(rue, personne.rue) &&
+                Objects.equals(ville, personne.ville) &&
+                Objects.equals(pays, personne.pays) &&
+                Objects.equals(telephone, personne.telephone) &&
+                Objects.equals(nif, personne.nif);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nom, prenom, age, rue, ville, pays, telephone, nif);
+    }
+
 
 }

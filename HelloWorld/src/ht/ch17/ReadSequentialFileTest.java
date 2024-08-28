@@ -7,7 +7,7 @@ public class ReadSequentialFileTest {
 		// TODO Auto-generated method stub
 		ReadSequentialFile application = new ReadSequentialFile();
 		
-		application.openFile();
+		application.openFile("clients.txt");
 		application.readRecords();
 		application.closeFile();
 	}
