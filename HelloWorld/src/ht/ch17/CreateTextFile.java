@@ -9,12 +9,12 @@ import java.util.Scanner;
 //Writing data to a sequential text file with class Formatter.
 public class CreateTextFile {
 
-	private Formatter output; // object used to output text to file
+	private static Formatter output; // object used to output text to file
 	
 	// enable user to open file
-	public void openFile() {
+	public static void openFile(String fichier) {
 		try {
-			output = new Formatter("clients.txt"); // open the file
+			output = new Formatter(fichier); // open the file
 		}catch(SecurityException securityException) {
 			System.err.println("You do  not have write access to this file");
 			System.exit(1); // terminate the program

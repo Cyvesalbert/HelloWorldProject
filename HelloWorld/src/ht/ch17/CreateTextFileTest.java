@@ -8,7 +8,7 @@ public class CreateTextFileTest {
 
 		CreateTextFile application = new CreateTextFile();
 		
-		application.openFile();
+		application.openFile("clients.txt");
 		application.addRecords();
 		application.closeFile();
 	

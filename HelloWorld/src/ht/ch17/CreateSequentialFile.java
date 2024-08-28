@@ -9,12 +9,12 @@ import java.util.Scanner;
 //Writing objects sequentially to a file with class ObjectOutputStream.
 public class CreateSequentialFile {
 	
-	private ObjectOutputStream output; // outputs data to file
+	public static ObjectOutputStream output; // outputs data to file
 	
 	// allow user to specify file name
-	public void openFile() {
+	public static void openFile(String fichier) {
 		try { // open file
-			output = new ObjectOutputStream(new FileOutputStream("clients.txt"));
+			output = new ObjectOutputStream(new FileOutputStream(fichier));
 		}catch(IOException ioException) {
 			System.err.println("Error opening file");
 		}
