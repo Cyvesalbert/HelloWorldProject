@@ -16,7 +16,7 @@ public class SimpleArray { // CAUTION: NOT THREAD SAFE
 	}
 	
 	// add a value to the shared array 
-	public void add(int value) {
+	public synchronized void add(int value) {
 		int position = writeIndex; // store the write index
 		
 		try {
