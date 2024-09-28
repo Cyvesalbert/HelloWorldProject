@@ -14,7 +14,7 @@ import javax.swing.JScrollPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-//Loading a document from a URL into a browser.
+// 
 public class SiteSelector  extends JApplet{
 	 private HashMap<String, URL> sites; // site names an URLs
 	 private ArrayList<String> siteNames; // siteNames
