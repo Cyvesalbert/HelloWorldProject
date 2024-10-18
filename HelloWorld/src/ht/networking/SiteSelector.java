@@ -28,6 +28,7 @@ public class SiteSelector  extends JApplet{
 		 // obtain parameters from 
 		 getSitesFromHTMLParameterset();
 		 
+		 
 		 // create GUI components and lay out interface
 		 add(new JLabel("Choose a site to browse"), BorderLayout.NORTH);
 		 
