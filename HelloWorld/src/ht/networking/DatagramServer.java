@@ -37,7 +37,7 @@ public class DatagramServer extends JFrame{
 	// wait for packets to arrive, display data and echo packet to client
 	public void waitForPackets() {
 		while(true) {
-			try { // receive packet, isplay contents return copy to client
+			try { // receive packet, display contents return copy to client
 				byte[] data = new byte[100]; // set up packet
 				DatagramPacket receivepacket = new DatagramPacket(data, data.length);
 				
@@ -73,12 +73,15 @@ public class DatagramServer extends JFrame{
 		displayMessage("Packet sent\n");
 	}
 	
-	// manipulates displayArea in the event- dispatch thread
+	//manipulates displayArea in the event- dispatch thread
 	private void displayMessage(final String messageToDisplay) {
 		SwingUtilities.invokeLater(
-				new Runnable() { // updates display area
+				new Runnable() { 
+					public void run() { // updates display area
 					displayArea.append(messageToDisplay); // display message
 				}
+				}
 				);
+	
 	}
 }
