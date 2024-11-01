@@ -52,8 +52,10 @@ public class TicTacToeServer extends JFrame{
 		currentPlayer = PLAYER_X; // set current player to first player
 		
 		try {
-			server = new ServerSocket(123, 2); // set up server socket
+			server = new ServerSocket(12345, 2); // set up server socket
+			System.out.println("Server started on port 8080");
 		}catch(IOException ioException) {
+			System.err.println("Port is already in use");
 			ioException.printStackTrace();
 			System.exit(1);
 		}
