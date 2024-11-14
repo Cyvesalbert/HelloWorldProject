@@ -11,7 +11,7 @@ import java.util.List;
 //PreparedStatements used by the Address Book application.
 public class PersonQueries {
 
-	private static final String URL = "jdbc:derby:AddresBook";
+	private static final String URL = "jdbc:mysql://127.0.0.1:3307/AddresBook";
 	private static final String USERNAME = "root";
 	private static final String PASSWORD = "M02P@$$,MYSQL";
 	
