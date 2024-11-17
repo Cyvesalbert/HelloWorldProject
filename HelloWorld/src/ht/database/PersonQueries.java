@@ -57,10 +57,10 @@ public class PersonQueries {
 			while(resultSet.next()) {
 				results.add(new Person(
 						resultSet.getInt( "addressID" ),
-						resultSet.getString( "FirstName" ),
-						resultSet.getString( "LastName" ),
-						resultSet.getString( "Email" ),
-						resultSet.getString( "PhoneNumber" )));
+						resultSet.getString( "firstName" ),
+						resultSet.getString( "lastName" ),
+						resultSet.getString( "email" ),
+						resultSet.getString( "phoneNumber" )));
 			}
 		}catch(SQLException sqlException) {
 			sqlException.printStackTrace();
@@ -72,7 +72,6 @@ public class PersonQueries {
 				close();
 			}
 		}
-		
 		return results;
 	}
 	

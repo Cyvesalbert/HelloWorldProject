@@ -192,7 +192,18 @@ public class AddressBookDisplay extends JFrame{
 				}
 				);
 		
-		add(insertButton);
+		add(browseButton);
+		
+		insertButton.setText( "Insert New Entry" );
+		insertButton.addActionListener(
+			new ActionListener(){
+				public void actionPerformed( ActionEvent evt ){
+					insertButtonActionPerformed( evt );
+					} // end method actionPerformed
+				} // end anonymous inner class
+			); // end call to addActionListener
+		
+		add( insertButton );
 		
 		addWindowListener(
 				new WindowAdapter() {

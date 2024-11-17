@@ -24,27 +24,27 @@ public class Person {
 
 	private void setPhoneNumber(String phone) {
 		// TODO Auto-generated method stub
-		
+		phoneNumber = phone;
 	}
 
 	private void setEmail(String emailAddress) {
 		// TODO Auto-generated method stub
-		
+		email = emailAddress;
 	}
 
 	private void setLastName(String last) {
 		// TODO Auto-generated method stub
-		
+		lastName = last;
 	}
 
 	private void setFirstName(String first) {
 		// TODO Auto-generated method stub
-		
+		firstName = first;
 	}
 
 	private void setAddressID(int id) {
 		// TODO Auto-generated method stub
-		
+		addressID = id;
 	}
 	
 	public int getAddressID() {
@@ -65,6 +65,10 @@ public class Person {
 	
 	public String getPhoneNumber() {
 		return phoneNumber;
+	}
+	
+	public String toString() {
+		return getAddressID() + getFirstName() + getLastame() + getEmail() + getPhoneNumber();
 	}
 	
 }
